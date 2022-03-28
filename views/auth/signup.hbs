@@ -1,0 +1,11 @@
+<form action="#" method="post">
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username" />
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password" />
+  <input type="submit" value="Submit" />
+</form>
+
+{{#if errorMessage}}
+  <p class="error">{{errorMessage}}</p>
+{{/if}}
