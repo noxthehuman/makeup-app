@@ -10,3 +10,8 @@ a {
 h1 {
   color: 15px;
 }
+
+.navBar {
+  box-sizing: border-box;
+  text-decoration: none;
+}
