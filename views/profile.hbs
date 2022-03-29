@@ -1,14 +1,15 @@
 <h1>My Account</h1>
-<p>
+
+<div>
+    <img src="{{this.user.picture}}" alt=" {{this.user.name}} picture">
+</div>
     
-Profile picture: {{this.picture}}
-
-Name: {{this.user.username}}
-Email Id: {{this.user.email}}
-Age: {{this.user.age}}
-Location: {{this.user.location}}
-
-</p>
+<ul>
+    <li> Name: {{this.user.username}} </li>
+    <li> Email Id: {{this.user.email}}</li>
+    <li> Age: {{this.user.age}}</li>
+    <li>Location: {{this.user.location}}</li>
+</ul>
 
 
 

@@ -1,19 +1,21 @@
 const router = require("express").Router();
 const bcryptjs = require("bcryptjs");
 const UserModel = require("../models/User.model");
+const fileuploader = require('../config/cloudinary.config');
+const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", async (req, res, next) => {
+router.post("/signup", fileuploader.single("picture"), async (req, res, next) => {
   const userInput = req.body;
   console.log("userinput", userInput);
   if (!userInput.username) {
-    res.render("auth/signup", { errorMessage: "Missing username" });
+    res.render("auth/signup", { errorMessage: "Enter a username" });
     return;
   } else if (userInput.password?.length < 8) {
-    res.render("auth/signup", { errorMessage: "Password to short" });
+    res.render("auth/signup", { errorMessage: "Password is too short, you nedd at least 8 characters" });
     return;
   }
   try {
@@ -30,6 +32,7 @@ router.post("/signup", async (req, res, next) => {
           email: userInput.emailid,
           age: userInput.age,
           location: userInput.location,
+          picture: req.file.path
         });
         req.session.user = newUser;
         res.redirect("/");
@@ -51,7 +54,7 @@ router.post("/login", async (req, res, next) => {
     res.render("auth/login", { errorMessage: "Enter Username" });
     return;
   } else if (userInput.password?.length < 8) {
-    res.render("auth/login", { errorMessage: "Password to short" });
+    res.render("auth/login", { errorMessage: "Password to short, you need at least 8 characters" });
     return;
   }
   const userExist = await UserModel.findOne({ username: userInput.username });
