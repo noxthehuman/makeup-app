@@ -8,6 +8,7 @@ router.get("/signup", (req, res, next) => {
 
 router.post("/signup", async (req, res, next) => {
   const userInput = req.body;
+  // console.log("userinput", userInput);
   if (!userInput.username) {
     res.render("auth/signup", { errorMessage: "Missing username" });
     return;

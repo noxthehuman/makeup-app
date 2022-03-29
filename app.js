@@ -29,8 +29,18 @@ app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 const index = require("./routes/index.routes");
 app.use("/", index);
 
-const profilePage = require("./routes/profile.routes");
-app.use("/profile", profilePage);
+// const profilePage = require("./routes/profile.routes");
+// app.use("/profile", profilePage);
+const router = require("express").Router();
+const userModel = require("../makeup-app/models/User.model");
+router.get("/profile/:userId", (req, res, next) => {
+  const { userId } = req.params;
+  console.log(req.params);
+
+  userModel.findById(userId).then((user) => {
+    res.render("profile", user);
+  });
+});
 
 const lookPage = require("./routes/looks.routes");
 app.use("/looks", lookPage);

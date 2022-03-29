@@ -1,9 +1,28 @@
-<form action="#" method="post">
+<form action="/auth/signup" method="post" "enctype="multipart/form-data>
   <label for="username">Username</label>
   <input type="text" id="username" name="username" />
   <label for="password">Password</label>
-  <input type="password" id="password" name="password" />
-  <input type="submit" value="Submit" />
+  <input type="password" id="password" name="password" value="123456789"/>
+  
+ 
+    <input type="file" name="movie-cover-image" />
+    <label> Name:
+      <input type="text" name="name" placeholder="Name" value="Akanksha"/>
+    </label>
+
+    <label> Email Id:
+      <input type="text" name="emailid" placeholder="EmailId" />
+    </label>
+
+    <label> Age:
+      <input type="number" name="age" placeholder="Age" />
+    </label>
+
+    <label> Location:
+      <input type="text" name="location" placeholder="City" />
+    </label>
+
+    <input type="submit" value="Submit" />
 </form>
 
 {{#if errorMessage}}
