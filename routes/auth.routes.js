@@ -1,45 +1,53 @@
 const router = require("express").Router();
 const bcryptjs = require("bcryptjs");
 const UserModel = require("../models/User.model");
+const fileUploader = require("../config/cloudinary.config");
 
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", async (req, res, next) => {
-  const userInput = req.body;
-  console.log("userinput", userInput);
-  if (!userInput.username) {
-    res.render("auth/signup", { errorMessage: "Missing username" });
-    return;
-  } else if (userInput.password?.length < 8) {
-    res.render("auth/signup", { errorMessage: "Password to short" });
-    return;
-  }
-  try {
-    const userExist = await UserModel.findOne({ username: userInput.username });
-    if (userExist) {
-      res.render("auth/signup", { errorMessage: "Username already taken" });
+router.post(
+  "/signup",
+  fileUploader.single("picture"),
+  async (req, res, next) => {
+    const userInput = req.body;
+    console.log("userinput", userInput);
+    if (!userInput.username) {
+      res.render("auth/signup", { errorMessage: "Missing username" });
+      return;
+    } else if (userInput.password?.length < 8) {
+      res.render("auth/signup", { errorMessage: "Password to short" });
       return;
     }
-    bcryptjs.genSalt(10, async function (err, salt) {
-      bcryptjs.hash(userInput.password, salt, async function (err, hash) {
-        const newUser = await UserModel.create({
-          username: userInput.username,
-          password: hash,
-          email: userInput.emailid,
-          age: userInput.age,
-          location: userInput.location,
-        });
-        req.session.user = newUser;
-        res.redirect("/");
+    try {
+      const userExist = await UserModel.findOne({
+        username: userInput.username,
       });
-    });
-  } catch (err) {
-    console.log({ err });
-    res.render("auth/signup");
+      if (userExist) {
+        res.render("auth/signup", { errorMessage: "Username already taken" });
+        return;
+      }
+      bcryptjs.genSalt(10, async function (err, salt) {
+        bcryptjs.hash(userInput.password, salt, async function (err, hash) {
+          const newUser = await UserModel.create({
+            username: userInput.username,
+            password: hash,
+            email: userInput.emailid,
+            age: userInput.age,
+            location: userInput.location,
+            picture: req.file.path,
+          });
+          req.session.user = newUser;
+          res.redirect("/");
+        });
+      });
+    } catch (err) {
+      console.log({ err });
+      res.render("auth/signup");
+    }
   }
-});
+);
 
 router.get("/login", (req, res, next) => {
   res.render("auth/login");
