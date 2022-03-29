@@ -8,7 +8,7 @@ router.get("/signup", (req, res, next) => {
 
 router.post("/signup", async (req, res, next) => {
   const userInput = req.body;
-  // console.log("userinput", userInput);
+  console.log("userinput", userInput);
   if (!userInput.username) {
     res.render("auth/signup", { errorMessage: "Missing username" });
     return;
@@ -27,6 +27,9 @@ router.post("/signup", async (req, res, next) => {
         const newUser = await UserModel.create({
           username: userInput.username,
           password: hash,
+          email: userInput.emailid,
+          age: userInput.age,
+          location: userInput.location,
         });
         req.session.user = newUser;
         res.redirect("/");
@@ -65,7 +68,8 @@ router.post("/login", async (req, res, next) => {
     return;
   }
   req.session.user = userExist;
-  res.redirect("/");
+  console.log("login", userExist);
+  res.redirect("/profile");
 });
 
 module.exports = router;
