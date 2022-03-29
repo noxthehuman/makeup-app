@@ -1,18 +1,27 @@
 <h1>My Account</h1>
 
 <div>
-    <img src="{{this.user.picture}}" alt=" {{this.user.name}} picture">
+    <img src="{{user.picture}}" alt=" {{user.name}} picture">
 </div>
     
 <ul>
-    <li> Name: {{this.user.username}} </li>
-    <li> Email Id: {{this.user.email}}</li>
-    <li> Age: {{this.user.age}}</li>
-    <li>Location: {{this.user.location}}</li>
+    <li> Name: {{user.username}} </li>
+    <li> Email Id: {{user.email}}</li>
+    <li> Age: {{user.age}}</li>
+    <li>Location: {{user.location}}</li>
 </ul>
 
 
 
 <h2>My Products</h2>
+
+{{#each userFavorite}}
+<div>
+    <img src="{{product.imageUrl}}" alt=" {{product.name}}" >
+</div>
+<div>
+    <p> {{product.name}} by {{product.brand}} </p>
+</div>
+{{/each}}
 
 <h2>Create the Look</h2>
