@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const isLoggedIn = require("../middleware/isLoggedIn")
-const {getProducts, getAllProducts} = require("../api/get.products")
+const Product = require('../models/Product.model')
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -8,8 +8,16 @@ router.get("/", (req, res, next) => {
 })
 
 router.get('/products', async (req, res, next) => {
-  const products =  await getProducts(req.query)
-  res.render('index', {products})
+  try {
+    const {productType, brand, price} = req.query
+    const products = await Product.find({productType})
+    console.log(req.query)
+    console.log(products)
+    res.render('index', {products})
+  }
+  catch(error) {
+    console.log(error)
+  }
 })
 
 module.exports = router;

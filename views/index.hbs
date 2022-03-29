@@ -5,14 +5,14 @@
 <h1>Recommendations</h1>
 
 <form action="/products" method="get" id="product-search">
-    <input type="search" name="product_type" id="product_type" placeholder="search for item"/>
+    <input type="search" name="productType" id="productType" placeholder="search for item"/>
     <input type="search" name="brand" id="brand" placeholder="By brand" />
-    <input type="search" name="price_less_than" id="price_less_than" placeholder="Maximum Price"/>
+    <input type="search" name="price" id="price" placeholder="Price"/>
     <input type="submit" value="search" />
 </form>
 
 {{#each products}}
-<img src="{{image_link}}" alt= "{{name}}"/>
+<img src="{{imageUrl}}" alt= "{{name}}"/>
 <p> {{name}} by {{brand}} </p>
 <p> {{price}} </p>
 {{/each}}
