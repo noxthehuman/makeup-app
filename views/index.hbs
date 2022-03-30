@@ -1,23 +1,23 @@
 <h1>Makeup App 🚀</h1>
-<div class="homepagephoto">
-<img class="picHomePage" src="" alt="Products">
+<div class="homePagePhoto">
 </div>
 
-
-<form action="/products" method="get" id="product-search">
+<div  class="homeSearchBox">
+<form class="homePageForm" action="/products" method="get" id="product-search">
     <input type="search" name="productType" id="productType" placeholder="search for item"/>
     <input type="search" name="brand" id="brand" placeholder="By brand" />
     <input type="search" name="price" id="price" placeholder="Price"/>
     <input type="submit" value="search" />
 </form>
+</div>
 
 <div class="productHomePage">
       <ul class="container">
           {{#each products}}
           <li><img class="productImage" src="{{imageUrl}}" alt= "{{name}}"/>
-          {{name}} by {{brand}}
-          {{price}} 
-          <button value="{{_id}}"> Fav </button></li>
+          {{name}} by <h3>{{brand}}</h3>
+          <h6>{{price}}€</h6>
+          <button class="productButton" value="{{_id}}"> Fav </button></li>
           {{/each}}
       </ul>
 </div>
