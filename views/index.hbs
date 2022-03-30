@@ -1,5 +1,7 @@
 <h1>Makeup App 🚀</h1>
 <div class="homePagePhoto">
+    <img class="mainPicHome" src="../images/homepage6.jpg" alt="">
+     <img class="secondPic" src="../images/homepage5.jpg" alt="">
 </div>
 
 <div class="homeSearchBox">
@@ -17,12 +19,12 @@
     />
     <input type="search" name="brand" id="brand" placeholder="By brand" />
     <input type="search" name="price" id="price" placeholder="Price" />
-    <input type="submit" value="search" />
+    <input class="productSearchButton" type="submit" value="search" />
   </form>
 </div>
 
 <div class="productHomePage">
-  <ul class="container">
+  <ul class="containerProduct">
     {{#each products}}
       <li><img class="productImage" src="{{imageUrl}}" alt="{{name}}" />
         {{name}}
