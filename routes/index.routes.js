@@ -8,8 +8,13 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
-router.get("/product-detail", (req, res, next) => {
-  res.render("../views/prod-detail.hbs");
+router.get("/product-detail", async (req, res, next) => {
+  try {
+    const productToDetail = await Product.findOne(req.body);
+    res.render("../views/prod-detail.hbs", { productToDetail });
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 module.exports = router;
