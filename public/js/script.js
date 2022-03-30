@@ -14,6 +14,6 @@ function setUpFavButton(button) {
 async function axiosCall(event) {
     const button =  event.target
     console.log(button)
-    const buttonId = await axios.post('/products', {product: button.value})
+    const buttonId = await axios.post('/products/favorites', {product: button.value})
     return buttonId.data
 }
