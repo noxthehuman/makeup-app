@@ -18,10 +18,10 @@ const app = express();
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 require("./config/session.config")(app);
-app.use((req, res, next)=> {
-    console.log(req.session.cookie)
-    next()
-  })
+app.use((req, res, next) => {
+  console.log(req.session.cookie);
+  next();
+});
 
 // default value for title local
 const capitalized = require("./utils/capitalized");
@@ -33,7 +33,7 @@ app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 const index = require("./routes/index.routes");
 const product = require("./routes/product.routes");
 app.use("/", index);
-app.use('/products', product)
+app.use("/products", product);
 
 const profilePage = require("./routes/profile.routes");
 app.use("/profile", profilePage);

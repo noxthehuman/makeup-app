@@ -2,7 +2,6 @@
 
 /* Made some changes in the body () to try out -Laurie */
 body {
-  padding: 50px;
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
   font-family: "Oswald", sans-serif;
 }
@@ -81,15 +80,32 @@ a:hover {
 .productImage {
   height: 300px;
   width: 300px;
-  border: 2px solid black;
+  border: 2px solid grey;
 }
 
-.homepagephoto {
-  background-image: url("../images/homepage1.jpg");
+.homePagePhoto {
+  background-image: url("../images/Soft\ Brown\ Gradient\ Pastel\ Minimalist\ Fun\ Beauty\ Banner.png");
   background-size: contain;
+  background-repeat: no-repeat;
   width: 100vw;
   height: 500px;
-  background-repeat: no-repeat;
+}
+
+.homePageForm {
+  margin: 20px;
+}
+
+.container h3 {
+  color: #d14962;
+}
+
+.productButton {
+  width: 150px;
+}
+
+.productHomePage {
+  display: flex;
+  text-align: center;
 }
 /* .picHomePage {
   width: 600px;
@@ -112,19 +128,16 @@ a:hover {
 
 /* Login Page */
 .login {
-  background-color: #d14962;
-  height: 520px;
-  width: 1244px;
+  background-image: url("../images/homepage2.webp");
+  background-color: #f2b988;
 }
 
 .loginForm {
-  position: absolute;
-  top: 374px;
-  right: 530px;
-  height: 164px;
-  width: 300px;
-  background-color: #ede8e3;
-  font: 30px;
+  background-color: aliceblue;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  text-align: center;
 }
 
 .form-style-1 {
@@ -156,14 +169,6 @@ a:hover {
   height: 32px;
   border: 10px;
   border-radius: 10px;
-}
-
-.loginImage {
-  position: absolute;
-  right: 531px;
-  top: 125px;
-  height: 250px;
-  width: 300px;
 }
 
 /* SIGNUP PAGE - Laurie */
