@@ -6,6 +6,16 @@ body {
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
   font-family: "Oswald", sans-serif;
 }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 
 a {
   color: #00b7ff;
@@ -15,11 +25,78 @@ h1 {
   color: 15px;
 }
 
-.navBar {
-  box-sizing: border-box;
-  text-decoration: none;
+/* home page */
+/* nav bar */
+.nav-horizontal {
+  background-color: #d14962;
+  overflow: hidden;
+  height: 3em;
+  width: 100%;
 }
-.profilePicture {
+
+.mask {
+  height: 5em;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.listNavBar {
+  display: inline-table;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+li {
+  display: table-cell;
+}
+
+a {
+  display: block;
+  padding: 0 1em;
+  text-decoration: none;
+  color: #f9f9f9;
+  height: 2em;
+  /* line-height: 3; */
+}
+a:hover {
+  /* border-bottom: 2px solid black; */
+  background-color: #f9f9f9;
+  color: #bf344d;
+  font-size: bold;
+}
+
+.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.container li {
+  display: flex;
+  flex-direction: column;
+}
+
+.productImage {
+  height: 300px;
+  width: 300px;
+  border: 2px solid black;
+}
+
+.homepagephoto {
+  background-image: url("../images/homepage1.jpg");
+  background-size: contain;
+  width: 100vw;
+  height: 500px;
+  background-repeat: no-repeat;
+}
+/* .picHomePage {
+  width: 600px;
+  height: 500px;
+  display: block;
+  margin: 0 auto;
+} */
+
+/* .profilePicture {
   height: 250px;
   width: 350px;
 }
@@ -29,7 +106,7 @@ h1 {
   right: 470px;
   top: 113px;
   font-size: 40px;
-}
+} */
 
 /* Login Page */
 .login {
