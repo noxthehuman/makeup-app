@@ -8,10 +8,10 @@ document.addEventListener(
 );
 
 function setUpFavButton(button) {
-  button.addEventListener('click', axiosCall)
+  button.addEventListener('click', favAxiosCall)
 }
 
-async function axiosCall(event) {
+async function favAxiosCall(event) {
     const button =  event.target
     console.log(button)
     const buttonId = await axios.post('/products/favorites', {product: button.value})

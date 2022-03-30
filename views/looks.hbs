@@ -1,15 +1,70 @@
-<h3>Looks page</h3>
+<h1>Create your custom look</h1>
 
-<form action="/looks" method="post">
-<label for="eyes">Eyes</label>
+<form action="/profile" method="post">
+
+<label for="name"> Name </label>
+<input type="text" name="name" id="name"/>
+
+<div id="eyeshadow">
+    <label for="eyeshadow-display"> Eyeshadow </label>
+    <input type="hidden" name="eyeshadow" id="eyeshadow-display"/>
+    <p> </p>
+</div>
+
+<div id="eyeliner">
+    <label for="eyeliner-display"> Eyeliner </label>
+    <input type="hidden" name="eyeliner" id="eyeliner-display"/>
+    <p> </p>
+</div>
+
+<div id="mascara">
+    <label for="mascara-display"> Mascara </label>
+    <input type="hidden" name="mascara" id="mascara-display"/>
+    <p> </p>
+</div>
+
+<div id="eyebrow">
+    <label for="eyebrow-display"> Eyebrow </label>
+    <input type="hidden" name="eyebrow" id="eyebrow-display"/>
+    <p> </p>
+</div>
+
+<div id="foundation">
+    <label for="foundation-display"> Foundation </label>
+    <input type="hidden" name="foundation" id="foundation-display"/>
+    <p> </p>
+</div>
+
+<div id="bronzer">
+    <label for="bronzer-display"> Bronzer </label>
+    <input type="hidden" name="bronzer" id="bronzer-display"/>
+    <p> </p>
+</div>
+
+<div id="blush">
+    <label for="blush-display"> Blush </label>
+    <input type="hidden" name="blush" id="blush-display"/>
+    <p> </p>
+</div>
+
+<div id="lipstick">
+    <label for="lipstick-display"> Eyeshadow </label>
+    <input type="hidden" name="lipstick" id="lipstick-display"/>
+    <p> </p>
+</div>
+
+<input type="submit" value="Create Look" id="createLook"/>
 </form>
 
-{{#each favProducts}}
-<ul>
-    <li> <img src="{{product.imageUrl}}" alt=" {{product.name}} image " /> </li>
-    <li> {{product.name}} by {{product.brand}} </li>
+
+<ul class="container">
+    {{#each favProducts}}
     <li> 
-       <button method="post"> Add </button> 
+        <img src="{{product.imageUrl}}" alt=" {{product.name}} image" class="productImage" />  
+        <p data-product-id="{{product._id}}">{{product.name}} by {{product.brand}} </p>
+       <button method="post" class="addToLook"> Add </button>
+       <input type="hidden" value="{{product.productType}}" /> 
     </li>
+    {{/each}}
 </ul>
-{{/each}}
+
