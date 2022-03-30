@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
+/* Made some changes in the body (police) to try out -Laurie */
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  font-family: "Oswald", sans-serif;
 }
 
 a {
@@ -81,4 +85,15 @@ h1 {
   top: 125px;
   height: 250px;
   width: 300px;
+
+/* SIGNUP PAGE - Laurie */
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  font-family: "Oswald", sans-serif;
+}
+
+.centered {
+  margin: auto;
 }
