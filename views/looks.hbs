@@ -1,7 +1,15 @@
 <h3>Looks page</h3>
 
-<form action="/profile/looks" method="post">
+<form action="/looks" method="post">
 <label for="eyes">Eyes</label>
-
-
 </form>
+
+{{#each favProducts}}
+<ul>
+    <li> <img src="{{product.imageUrl}}" alt=" {{product.name}} image " /> </li>
+    <li> {{product.name}} by {{product.brand}} </li>
+    <li> 
+       <button method="post"> Add </button> 
+    </li>
+</ul>
+{{/each}}

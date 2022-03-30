@@ -22,8 +22,7 @@ router.get('/', async (req, res, next) => {
       brand: regexQuery(brand),
       price: lessThanQuery(price)
     })
-    //console.log(req.session, 'i am in products and this is req session')
-    console.log(req.query)
+    
     res.render('index', { products })
   } catch (error) {
     console.log(error)
@@ -33,7 +32,6 @@ router.get('/', async (req, res, next) => {
 router.post('/favorites', isLoggedIn, async (req, res, next) => {
   try {
     const { product } = req.body
-    console.log(req.body)
     const foundFav = await Favorite.findOne({
       product: product,
       user: req.session.user._id
@@ -47,8 +45,6 @@ router.post('/favorites', isLoggedIn, async (req, res, next) => {
         product: product
       })
     }
-
-    console.log(foundFav)
     
     res.json(newFav)
   } catch (error) {
