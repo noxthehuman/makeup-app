@@ -28,7 +28,6 @@ router.get('/products', async (req, res, next) => {
       price: lessThanQuery(price)
     })
     console.log(req.query)
-    console.log(products)
     res.render('index', { products })
   } catch (error) {
     console.log(error)
