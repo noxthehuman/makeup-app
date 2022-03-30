@@ -10,6 +10,8 @@ router.get('/', isLoggedin, async (req, res, next) => {
     const userFavorite = await Favorite.find({
       user: req.session.user._id
     }).populate("product")
+
+    console.log(userFavorite)
     
     console.log(userFavorite)
     res.render('profile', { user: req.user, userFavorite })

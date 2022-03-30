@@ -8,18 +8,22 @@ router.post('/products', async (req, res, next) => {
   try {
     const { product } = req.body
     console.log(req.body)
-    const foundFav = await Favorite.find({
+    const foundFav = await Favorite.findOne({
       product: product,
       user: req.session.user._id
     })
     if (foundFav !== null) {
       await Favorite.findOneAndDelete(foundFav)
     }
+    else {
+      const newFav = await Favorite.create({
+        user: req.session.user._id,
+        product: product
+      })
+    }
 
-    const newFav = await Favorite.create({
-      user: req.session.user._id,
-      product: product
-    })
+    console.log(foundFav)
+    
     res.json(newFav)
   } catch (error) {
     console.error(error)
