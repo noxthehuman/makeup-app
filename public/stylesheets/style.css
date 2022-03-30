@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
-/* Made some changes in the body (police) to try out -Laurie */
+/* Made some changes in the body () to try out -Laurie */
 body {
   padding: 50px;
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
@@ -32,6 +32,8 @@ h1 {
   overflow: hidden;
   height: 3em;
   width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 .mask {
@@ -166,12 +168,20 @@ a:hover {
 
 /* SIGNUP PAGE - Laurie */
 
-.flex {
+.signUpForm {
   display: flex;
   flex-direction: column;
   font-family: "Oswald", sans-serif;
+  align-items: center;
+  justify-items: center;
 }
 
-.centered {
-  margin: auto;
+.formBoxes {
+  border: none;
+  border-bottom: 1px solid black;
+  margin: 20px;
+}
+
+::placeholder {
+  color: rgb(218, 216, 216);
 }

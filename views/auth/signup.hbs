@@ -1,15 +1,15 @@
-<div class="flex">
-
-  <h2 class="centered">Create account</h2>
+<div class="signUpForm">
+  <h2>Create account</h2>
   <form action="/auth/signup" method="post" enctype="multipart/form-data">
     {{! Bootstrap class }}
-    <div class="form-floating mb-3">
+    <div class="form-floating mb-3 signUpForm">
 
-      <label class="username" for="username"></label>
+      <label class="username formBoxes" for="username"></label>
       <input type="text" id="username" name="username" placeholder="Username" />
       <label for="password"></label>
       <input
         type="password"
+        class="formBoxes"
         id="password"
         name="password"
         placeholder="Password"
@@ -19,18 +19,17 @@
     <input type="file" name="picture" />
 
     <label></label>
-    <input type="text" name="emailid" placeholder="Email" />
+    <input class="formBoxes" type="text" name="emailid" placeholder="Email" />
 
     <label></label>
-    <input type="number" name="age" placeholder="Age" />
+    <input class="formBoxes" type="number" name="age" placeholder="Age" />
 
     <label></label>
-    <input type="text" name="location" placeholder="Location" />
+    <input class="formBoxes" type="text" name="location" placeholder="Location" />
 
     <input type="submit" value="Create account" />
   </form>
     </div>
-
 
   {{#if errorMessage}}
     <p class="error">{{errorMessage}}</p>
