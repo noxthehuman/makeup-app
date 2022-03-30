@@ -27,7 +27,7 @@ h1 {
 /* home page */
 /* nav bar */
 .nav-horizontal {
-  background-color: #d14962;
+  background-color: #1f101a;
   overflow: hidden;
   height: 3em;
   width: 100%;
@@ -48,33 +48,34 @@ h1 {
   max-width: 100%;
 }
 
-li {
+.listNavBar li {
   display: table-cell;
 }
 
-a {
+.listNavBar a {
   display: block;
   padding: 0 1em;
   text-decoration: none;
-  color: #f9f9f9;
+  color: #dfe0e2;
   height: 2em;
   /* line-height: 3; */
 }
-a:hover {
+.listNavBar a:hover {
   /* border-bottom: 2px solid black; */
   background-color: #f9f9f9;
-  color: #bf344d;
+  color: #8b233f;
   font-size: bold;
 }
 
-.container {
+.containerProduct {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(4, 1fr);
 }
-.container li {
+.containerProduct li {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .productImage {
@@ -84,28 +85,48 @@ a:hover {
 }
 
 .homePagePhoto {
-  background-image: url("../images/Soft\ Brown\ Gradient\ Pastel\ Minimalist\ Fun\ Beauty\ Banner.png");
+  /* background-image: url("../images/homepage7.jpg");
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  background-color: whitesmoke;
   width: 100vw;
   height: 500px;
+}
+
+.mainPicHome {
+  height: 500px;
+  display: block;
+}
+
+.secondPic {
+  height: 500px;
+  position: absolute;
+  top: 75px;
+  left: 770px;
 }
 
 .homePageForm {
   margin: 20px;
 }
 
-.container h3 {
-  color: #d14962;
+.containerProduct h3 {
+  color: #8b233f;
 }
 
 .productButton {
   width: 150px;
+  background-color: #ae8f63;
 }
 
 .productHomePage {
   display: flex;
   text-align: center;
+}
+
+.productSearchButton {
+  width: 175px;
+  background-color: #8b233f;
+  color: #f9f9f9;
 }
 /* .picHomePage {
   width: 600px;
@@ -188,5 +209,5 @@ a:hover {
 }
 
 ::placeholder {
-  color: rgb(218, 216, 216);
+  color: rgb(70, 56, 56);
 }
