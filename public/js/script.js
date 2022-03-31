@@ -2,7 +2,8 @@ document.addEventListener(
   "DOMContentLoaded",
   () => {
     console.log("makeup-app JS imported successfully!");
-    document.querySelectorAll('button').forEach(setUpFavButton)
+    document.querySelectorAll('button#fav').forEach(setUpFavButton)
+    //document.querySelectorAll('input#delete').forEach(deleteFav)
   },
   false
 );
@@ -17,3 +18,4 @@ async function favAxiosCall(event) {
     const buttonId = await axios.post('/products/favorites', {product: button.value})
     return buttonId.data
 }
+

@@ -3,6 +3,7 @@ document.addEventListener(
     () => {
         document.querySelectorAll('.addToLook').forEach(setUpAddButton);
         document.querySelector('form#createLookform').addEventListener('submit', checkIfEmpty)
+        document.querySelector('form#delete').addEventListener('submit', deleteFav, deleteLook)
     },
     false
 )
@@ -34,7 +35,7 @@ async function checkIfEmpty(event) {
         }
     })
     console.log(data)
-    const lookToCreateData =  await axios.post("/looks/create", data)
+    await axios.post("/looks/create", data)
 
     inputs.forEach((input) =>{
         input.value = ""
@@ -45,6 +46,25 @@ async function checkIfEmpty(event) {
 
     alert('Look Created successfully !')
     
-    //console.log(lookToCreateData, 'this is the data of the look created')
+}
+
+async function deleteFav(event) {
+    event.preventDefault()
+    const productId = event.target.querySelector('input[type= "hidden"]').value
+    console.log(productId)
+    
+    await axios.delete('/profile/delete/' + productId)
+
+    delete(event.target)
+}
+
+async function deleteLook(event) {
+    event.preventDefault()
+    const lookId = event.target.querySelector('input[type= "hidden"]').value
+    console.log(lookId)
+    
+    await axios.delete('/profile/delete/' + lookId)
+
+    delete(event.target)
 }
 
