@@ -12,27 +12,29 @@
   <body>
     <nav class="nav-horizontal">
       <div class="mask">
-        <ul class="listNavBar">
-          <li><a href="/">Home</a></li>
-          <li><a href="/profile">Profile</a></li>
-          <li><a href="/looks">Looks</a></li>
-          <li><a href="/auth/login">My account</a></li>
+       <ul class="listNavBar">
+         <li><a href="/">Home</a></li>
+         <li><a href="/profile">Profile</a></li>
+         <li><a href="/looks">Looks</a></li>
+         {{!-- <li><a href="/auth/signup">SignUp</a></li> --}}
+         <li class="navBarLogin"><a href="/auth/login">Log In</a></li>
 
-          <form action="/auth/logout" method="get">
-            <input class="logout-form" type="submit" value="log out" />
-          </form>
-        </ul>
+         <form action="/auth/logout" method="get" >
+            <input class="homePageLogout" type="submit" value="Log Out"/>
+         </form>
+         <li class="headingMainPage"><a href="">Shape Shift</a></li>
+       </ul>
       </div>
     </nav>
 
     {{{body}}}
 
-    <footer>
-      <div class="footer">
-        <p>© 2022 www.myapp.com. All rights reserved.
-        </p>
-      </div>
-    </footer>
+      <footer>
+         <div class="footer">
+            <p>© 2022 www.shapeshift.com. All rights reserved.
+            </p>
+         </div>
+      </footer>
 
     <script src="/js/script.js"></script>
     <script src="/js/creatingLook.js"></script>
