@@ -4,13 +4,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* border: 1px solid pink;
-  text-transform: uppercase; */
+  /* border: 1px solid pink; */
+  text-transform: uppercase;
 }
 
 body {
   font-family: "Oswald", sans-serif;
-  margin-top: 50px;
 }
 
 /* home page */
@@ -206,15 +205,33 @@ body {
 
 .sign-in-section {
   display: flex;
+  flex-direction: column;
   text-align: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.sign-in-section li {
+  list-style-type: none;
+  margin: 15px 0;
 }
 
 /* SIGNUP PAGE - Laurie */
 
+section.main-container {
+  padding-top: 40px;
+}
 .sections {
-  width: 50%;
-  margin-top: 50px;
+  /* width: 50%; */
+  flex: 1;
+  margin-top: 40px;
   display: flex;
+  justify-content: center;
+  /* height: 100vh; */
+}
+
+.signup {
+  width: 80%;
 }
 
 .vertical-line {
@@ -230,21 +247,28 @@ body {
   align-items: center;
   justify-items: center;
   width: 100%;
-  margin: auto;
 }
 
 .signup-title {
-  width: 100%;
   margin-bottom: 30px;
+  text-align: center;
+}
+
+form#create-account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .formBoxes {
+  display: flex;
   font-family: "Oswald", sans-serif;
   border: none;
   border-bottom: 1px solid black;
-  margin: 15px 0;
+  margin: 10px 0;
   font-size: 1rem;
-  width: 100%;
+  width: 80%;
 }
 
 ::placeholder {
@@ -260,15 +284,15 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  /* width: 100%; */
+  width: 100%;
+  align-items: flex-start;
 }
 
 .btn-black-hover {
   background-color: white;
   border: 1px solid black;
   font-size: 0.9rem;
-  width: 100%;
+  width: 80%;
   padding: 10px 0;
 }
 
@@ -397,4 +421,9 @@ body {
   text-align: center;
   cursor: pointer;
   text-decoration: none;
+}
+footer {
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
 }
