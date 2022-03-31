@@ -19,7 +19,7 @@ router.get('/', isLoggedin, async (req, res, next) => {
 
 // router.post('/', isLoggedin, async (req, res, next) => {
 //   try {
-//     console.log(req.body)
+//     console.log((req.body).trim())
 //     const lookCreated = await Looks.create(req.body)
 //     res.render('profile', {lookCreated}) 
 //   }

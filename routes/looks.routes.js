@@ -1,5 +1,7 @@
 const router = require("express").Router();
-const Favorite = require('../models/Favorites.model')
+const Favorite = require('../models/Favorites.model');
+const Look = require("../models/Looks.model");
+const isLoggedIn = require('../middleware/isLoggedIn')
 
 /* GET profile page */
 router.get("/", async (req, res, next) => {
@@ -11,5 +13,12 @@ router.get("/", async (req, res, next) => {
     console.error(error)
   } 
 });
+
+router.post('/create', isLoggedIn, async(req, res, next) => {
+  const lookToCreate = {...req.body, createdBy: req.session.user._id}
+  const createdLook = await Look.create(lookToCreate)
+  console.log(createdLook)
+  res.json(createdLook)
+})
 
 module.exports = router;

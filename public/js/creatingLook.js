@@ -2,7 +2,7 @@ document.addEventListener(
     "DOMContentLoaded",
     () => {
         document.querySelectorAll('.addToLook').forEach(setUpAddButton);
-        // document.querySelector('#createLook').addEventListener('click', checkIfEmpty)
+        document.querySelector('form#createLookform').addEventListener('submit', checkIfEmpty)
     },
     false
 )
@@ -13,7 +13,7 @@ function setUpAddButton(button) {
 
 async function populateLookForm(event) {
     const button = event.target
-    const productType =  button.parentElement.querySelector('[type = "hidden"]').value
+    const productType =  button.parentElement.querySelector('[type="hidden"]').value
     console.log(productType)
     const productSection =  document.getElementById(productType)
     const selectedProductElement = button.parentElement.querySelector('p')
@@ -23,17 +23,18 @@ async function populateLookForm(event) {
 
 }
 
-
-
-// async function checkIfEmpty(event) {
-//     event.preventDefault()
-//     const data = {}
-//     const input = event.querySelectorAll('input')
-//     input.forEach(()=> {
-//         if(input.value !== "") {
-//             data[input.name] = input.value
-//         }
-//     })
-//     await axios.post("/profile", data)
-// }
+async function checkIfEmpty(event) {
+    event.preventDefault()
+    const data = {}
+    const inputs = event.target.querySelectorAll('input')
+    inputs.forEach((input)=> {
+        if(input.value !== "") {
+            data[input.name] = input.value
+        }
+    })
+    console.log(data)
+    const lookToCreateData =  await axios.post("/looks/create", data)
+    
+    console.log(lookToCreateData, 'this is the data of the look created')
+}
 
