@@ -10,6 +10,7 @@
 
 body {
   font-family: "Oswald", sans-serif;
+  text-decoration: none;
 }
 
 /* home page */
@@ -56,9 +57,6 @@ body {
   color: #1f101a;
   line-height: 3;
   height: 100%;
-}
-
-.listNavBar a:hover {
   background-color: #f9f9f9;
   color: #1f101a;
   font-size: bold;
@@ -74,7 +72,7 @@ body {
 .containerProduct {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 .containerProduct li {
   display: flex;
@@ -99,8 +97,8 @@ body {
 }
 
 .productImage {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
   border: 1px solid #dfe0e2;
 }
 
@@ -137,12 +135,12 @@ body {
 }
 
 .containerProduct h3 {
-  color: #8b233f;
+  color: #b93a1d;
 }
 
 .productButton {
   width: 150px;
-  background-color: blue;
+  background-color: rgb(139, 85, 240);
   color: #dfe0e2;
   margin: 2px;
 }
@@ -153,42 +151,39 @@ body {
 }
 
 .productButton:hover {
-  background-color: #1f101a;
+  background-color: #4c2370;
 }
 
 .productHomePage {
   display: flex;
   text-align: center;
+  justify-items: baseline;
 }
 
 .productSearchButton {
   width: 190px;
   height: 40px;
-  background-color: #8b233f;
+  background-color: #a15bec;
   color: #f9f9f9;
   font-weight: bold;
 }
 
 .productSearchButton:hover {
   color: #dfe0e2;
-  background-color: #1f101a;
+  background-color: #5a3384;
 }
 
 .footer {
-  height: 50px;
+  height: 15px;
   width: 100%;
-  background-color: #1f101a;
-  color: #dfe0e2;
-  line-height: 3;
-}
-
-.footer p {
-  margin-left: 45px;
+  background-color: #d6d6d6;
+  color: #6f6f6f;
+  line-height: 0.75;
 }
 
 .profilePicture {
-  height: 250px;
-  width: 350px;
+  height: 150px;
+  width: auto;
 }
 
 .profile {
@@ -196,6 +191,20 @@ body {
   right: 470px;
   top: 113px;
   font-size: 40px;
+}
+
+.profileFlex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.looks-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Login Page */
@@ -363,18 +372,7 @@ form#create-account {
   transform: rotate(32deg);
   transition: 0.64s ease-in-out;
 }
-.popupphoto {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  width: 40%;
-  height: 100%;
-  overflow: hidden;
-}
-.popupphoto img {
-  width: auto;
-  height: 100%;
-}
+
 .popuptext {
   display: flex;
   flex-direction: column;
@@ -422,6 +420,7 @@ form#create-account {
   cursor: pointer;
   text-decoration: none;
 }
+
 footer {
   position: fixed;
   z-index: 99;

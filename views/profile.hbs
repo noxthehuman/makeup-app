@@ -1,23 +1,71 @@
-<h1>My Account</h1>
+<div class="profileFlex">
+  <div>
+    <h1>My Account</h1>
+    <div>
+      <img src="{{user.picture}}" alt=" {{user.name}} picture"
+      class="productImage" />
+    </div>
 
-<div>
-  <img
-    src="{{user.picture}}"
-    alt=" {{user.name}} picture"
-    class="productImage"
-  />
+    <ul class="looks-display">
+      <li> Name: {{user.username}} </li>
+      <li> Email Id: {{user.email}}</li>
+      <li> Age: {{user.age}}</li>
+      <li>Location: {{user.location}}</li>
+    </ul>
+  </div>
+
+  <div class="looks-display">
+     <h2>Your looks</h2>
+  <ul>
+    {{#each looks}}
+      <li>
+        <a href="#popup-{{_id}} "> {{name}} </a>
+      </li>
+    
+      <li>
+        <input type="hidden" value="{{_id}}" />
+        <form action="/profile/delete/look/{{_id}}" method="post" id="delete">
+          <input type="submit" value="Delete" />
+        </form>
+      </li>
+
+      <div class="popup" id="popup-{{_id}}">
+        <div class="popup-inner">
+          <div class="popuptext">
+            <div>
+              <h3>{{name}}</h3>
+              <p> {{mascara.name}}, {{mascara.brand}} </p>
+              <a href="{{mascara.linkToProduct}}"> See more</a>
+              <p> {{eyeliner.name}}, {{eyeliner.brand}} </p>
+              <a href="{{eyeliner.linkToProduct}}"> See more</a>
+              <p> {{eyeshadow.name}}, {{eyeshadow.brand}} </p>
+              <a href="{{eyeshadow.linkToProduct}}"> See more</a>
+              <p> {{eyebrows.name}}, {{eyebrows.brand}} </p>
+              <a href="{{eyebrows.linkToProduct}}"> See more</a>
+              <p> {{bronzer.name}}, {{bronzer.brand}} </p>
+              <a href="{{bronzer.linkToProduct}}"> See more</a>
+              <p> {{blush.name}}, {{blush.brand}} </p>
+              <a href="{{blush.linkToProduct}}"> See more</a>
+              <p> {{foundation.name}}, {{foundation.brand}} </p>
+              <a href="{{foundation.linkToProduct}}"> See more</a>
+              <p> {{lipstick.name}}, {{lipstick.brand}} </p>
+              <a href="{{lipstick.linkToProduct}}"> See more</a>
+            </div>
+          </div>
+        <a class="closepopup" href="#">X</a>
+      </div>
+    </div>
+
+    {{/each}}
+  </ul>
+
+  <a href="/looks">Create a new look</a>
+  </div>
 </div>
-
-<ul class="container">
-  <li> Name: {{user.username}} </li>
-  <li> Email Id: {{user.email}}</li>
-  <li> Age: {{user.age}}</li>
-  <li>Location: {{user.location}}</li>
-</ul>
 
 <h2>My Products</h2>
 
-<ul class="container">
+<ul class="containerProduct">
   {{#each userFavorite}}
     <li>
       <img
@@ -38,49 +86,3 @@
 
 </ul>
 
-<h2>Your looks</h2>
-<ul>
-  {{#each looks}}
-    <li>
-      <a href="#popup-{{_id}} "> {{name}} </a>
-    </li>
-  {{/each}}
-  {{#each looks}}
-    <li>
-      <input type="hidden" value="{{_id}}" />
-      <form action="/profile/delete/look/{{_id}}" method="post" id="delete">
-        <input type="submit" value="Delete" />
-      </form>
-    </li>
-
-    <div class="popup" id="popup-{{_id}}">
-      <div class="popup-inner">
-        <div class="popuptext">
-          <div>
-            <h3>{{name}}</h3>
-            <p> {{mascara.name}}, {{mascara.brand}} </p>
-            <a href="{{mascara.linkToProduct}}"> See more</a>
-            <p> {{eyeliner.name}}, {{eyeliner.brand}} </p>
-            <a href="{{eyeliner.linkToProduct}}"> See more</a>
-            <p> {{eyeshadow.name}}, {{eyeshadow.brand}} </p>
-            <a href="{{eyeshadow.linkToProduct}}"> See more</a>
-            <p> {{eyebrows.name}}, {{eyebrows.brand}} </p>
-            <a href="{{eyebrows.linkToProduct}}"> See more</a>
-            <p> {{bronzer.name}}, {{bronzer.brand}} </p>
-            <a href="{{bronzer.linkToProduct}}"> See more</a>
-            <p> {{blush.name}}, {{blush.brand}} </p>
-            <a href="{{blush.linkToProduct}}"> See more</a>
-            <p> {{foundation.name}}, {{foundation.brand}} </p>
-            <a href="{{foundation.linkToProduct}}"> See more</a>
-            <p> {{lipstick.name}}, {{lipstick.brand}} </p>
-            <a href="{{lipstick.linkToProduct}}"> See more</a>
-          </div>
-        </div>
-        <a class="closepopup" href="#">X</a>
-      </div>
-    </div>
-
-  {{/each}}
-</ul>
-
-<a href="/looks">Create a new look</a>
