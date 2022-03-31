@@ -17,6 +17,8 @@ const favicon = require("serve-favicon");
 // https://www.npmjs.com/package/path
 const path = require("path");
 
+require('./loadModels')
+
 // Middleware configuration
 module.exports = (app) => {
   // In development environment the app logs
