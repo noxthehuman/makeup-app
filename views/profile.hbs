@@ -47,19 +47,12 @@
   {{/each}}
   {{#each looks}}
     <li>
-      <a href=""> {{name}} </a>
       <input type="hidden" value="{{_id}}" />
       <form action="/profile/delete/look/{{_id}}" method="post" id="delete">
         <input type="submit" value="Delete" />
       </form>
     </li>
-  {{/each}}
-</ul>
 
-<a href="/looks">Create a new look</a>
-
-{{#each looks}}
-  <div class="containerPopup">
     <div class="popup" id="popup-{{_id}}">
       <div class="popup-inner">
         <div class="popuptext">
@@ -86,5 +79,8 @@
         <a class="closepopup" href="#">X</a>
       </div>
     </div>
-  </div>
-{{/each}}
+
+  {{/each}}
+</ul>
+
+<a href="/looks">Create a new look</a>
