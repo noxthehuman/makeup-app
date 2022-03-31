@@ -19,4 +19,15 @@ router.get('/', isLoggedin, async (req, res, next) => {
   }
 })
 
+router.post('/delete/:id', isLoggedin, async (req, res)=>{
+  try {
+    const id = req.params.id
+    await Favorite.findOneAndDelete({user: req.user._id ,product: id})
+    res.redirect('/profile')
+  }
+  catch(error) {
+    console.error(error)
+  }
+})
+
 module.exports = router;

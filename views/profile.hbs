@@ -18,6 +18,9 @@
         <li>
             <img src="{{product.imageUrl}}" alt=" {{product.name}}" class="productImage"/>
             <p> {{product.name}} by {{product.brand}} </p>
+            <form action="/profile/delete/{{product._id}}" method="post" id="delete">
+                <input type="submit" value="Delete">
+            </form>
         </li>
     {{/each}}
 
