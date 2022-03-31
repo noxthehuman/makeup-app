@@ -75,4 +75,15 @@ router.post("/login", async (req, res, next) => {
   res.redirect("/profile");
 });
 
+router.get('/logout', isLoggedIn, (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res
+        .status(500)
+        .render('auth/logout', { errorMessage: err.message })
+    }
+    res.redirect('/')
+  })
+})
+
 module.exports = router;

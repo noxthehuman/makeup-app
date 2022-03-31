@@ -18,6 +18,9 @@
         <li>
             <img src="{{product.imageUrl}}" alt=" {{product.name}}" class="productImage"/>
             <p> {{product.name}} by {{product.brand}} </p>
+            <form action="/profile/delete/favorite/{{product._id}}" method="post" id="delete">
+                <input type="submit" value="Delete">
+            </form>
         </li>
     {{/each}}
 
@@ -28,6 +31,10 @@
     {{#each looks}}
         <li> 
             <a href=""> {{name}} </a> 
+             <input type="hidden" value="{{_id}}" /> 
+             <form action="/profile/delete/look/{{_id}}" method="post" id="delete">
+                <input type="submit" value="Delete">
+            </form>
         </li>
     {{/each}}
 </ul>
