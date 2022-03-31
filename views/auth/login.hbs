@@ -1,13 +1,12 @@
 <div class="signupLogin">
-<div class="login"> 
-<form class="loginForm" action="#" method="post">
-  <ul class="form-style-1">
+  {{!-- sign in --}}
+<div class="sections"> 
+<form class="sign-in-section" action="#" method="post">
+  <ul class="sign-in-form">
   <li><label class="username" for="username">Username</label>
   <input  type="text" id="username" name="username" placeholder="username"/></li>
-  
   <li><label for="password">Password</label>
   <input  type="password" id="password" name="password" placeholder="password" /></li>
-
   <li><input class="loginSubmit btn-black-hover hover" type="submit" value="Submit" /></li>
   </ul>
 </form>
@@ -15,15 +14,13 @@
 {{#if errorMessage}}
   <p class="error">{{errorMessage}}</p>
 {{/if}}
-
 <div class="vertical-line"></div>
-
-<div class="right-section">
-<div class="signup">
+  {{!-- sign up --}}
+<div class="sections">
+<div class="sign-up-section">
   <h2 class="signup signup-title">Create an account</h2>
   <form action="/auth/signup" method="post" enctype="multipart/form-data">
     <div class="signup">
-
       <label class="username" for="username"></label>
       <input type="text" class="formBoxes" id="username" name="username" placeholder="Username" />
       <label for="password"></label>
@@ -34,26 +31,19 @@
         name="password"
         placeholder="Password"
       />
-
     <label for="image"></label>
     <input type="file" class=".changePolice" name="picture" />
-
     <label></label>
     <input class="formBoxes" type="text" name="emailid" placeholder="Email" />
-
     <label></label>
     <input class="formBoxes" type="number" name="age" placeholder="Age" />
-
     <label></label>
     <input class="formBoxes" type="text" name="location" placeholder="Location" />
-
     <input class="btn-black-hover change-font hover" type="submit" value="Create account" />
   </form>
     </div>
-
   {{#if errorMessage}}
     <p class="error">{{errorMessage}}</p>
   {{/if}}
-</div>
 </div>
 </div>
