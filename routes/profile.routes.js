@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const isLoggedin = require("../middleware/isLoggedIn");
 const Favorite = require("../models/Favorites.model");
+const { populate } = require("../models/Looks.model");
 const Look = require("../models/Looks.model");
 
 /* GET profile page */
@@ -10,16 +11,9 @@ router.get("/", isLoggedin, async (req, res, next) => {
       user: req.session.user._id,
     }).populate("product");
 
-    const looks = await Look.find({ createdBy: req.user._id }).populate(
-      "mascara",
-      "eyeliner",
-      "eyeshadow",
-      "eyebrows",
-      "bronzer",
-      "blush",
-      "foundation",
-      "lipstick"
-    );
+    const looks = await Look.find({ createdBy: req.user._id })
+      .populate("mascara", "eyeliner", "eyeshadow", "eyebrows")
+      .populate("bronzer", "blush", "foundation", "lipstick");
 
     res.render("profile", { user: req.user, userFavorite, looks });
   } catch (error) {
@@ -27,26 +21,24 @@ router.get("/", isLoggedin, async (req, res, next) => {
   }
 });
 
-router.post('/delete/favorite/:id', isLoggedin, async (req, res)=>{
+router.post("/delete/favorite/:id", isLoggedin, async (req, res) => {
   try {
-    const id = req.params.id
-    await Favorite.findOneAndDelete({user: req.user._id ,product: id})
-    res.redirect('/profile')
+    const id = req.params.id;
+    await Favorite.findOneAndDelete({ user: req.user._id, product: id });
+    res.redirect("/profile");
+  } catch (error) {
+    console.error(error);
   }
-  catch(error) {
-    console.error(error)
-  }
-})
+});
 
-router.post('/delete/look/:id', isLoggedin, async (req, res)=>{
+router.post("/delete/look/:id", isLoggedin, async (req, res) => {
   try {
-    const id = req.params.id
-    await Look.findOneAndDelete({user: req.user._id ,_id: id})
-    res.redirect('/profile')
+    const id = req.params.id;
+    await Look.findOneAndDelete({ user: req.user._id, _id: id });
+    res.redirect("/profile");
+  } catch (error) {
+    console.error(error);
   }
-  catch(error) {
-    console.error(error)
-  }
-})
+});
 
 module.exports = router;
