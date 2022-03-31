@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const isLoggedin = require("../middleware/isLoggedIn");
 const Favorite = require('../models/Favorites.model')
-// const fileUploader = require("../config/cloudinary.config");
+const Looks = require('../models/Looks.model')
 
 /* GET profile page */
 router.get('/', isLoggedin, async (req, res, next) => {
@@ -10,8 +10,6 @@ router.get('/', isLoggedin, async (req, res, next) => {
       user: req.session.user._id
     }).populate("product")
     
-    console.log(userFavorite)
-    //console.log(req.session, 'i am in profile and this is req session')
     res.render('profile', { user: req.user, userFavorite })
   } 
   catch (error) {
@@ -19,8 +17,15 @@ router.get('/', isLoggedin, async (req, res, next) => {
   }
 })
 
-router.get('/looks', isLoggedin, (req, res) => {
-  res.render('looks')
-})
+// router.post('/', isLoggedin, async (req, res, next) => {
+//   try {
+//     console.log((req.body).trim())
+//     const lookCreated = await Looks.create(req.body)
+//     res.render('profile', {lookCreated}) 
+//   }
+//   catch(error) {
+//     console.error(error)
+//   }
+// })
 
 module.exports = router;
