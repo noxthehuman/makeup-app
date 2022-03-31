@@ -4,8 +4,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid pink;
-  text-transform: uppercase;
+  /* border: 1px solid pink;
+  text-transform: uppercase; */
 }
 
 body {
@@ -76,6 +76,22 @@ body {
   align-items: center;
 }
 
+.homePageLogout {
+  background: none;
+  color: #dfe0e2;
+  -webkit-overflow-scrolling: touch;
+  border: none;
+  font-family: "Oswald", sans-serif;
+  height: 3em;
+  line-height: 3;
+  font-size: 16px;
+}
+
+.homePageLogout:hover {
+  background-color: #f9f9f9;
+  color: #1f101a;
+}
+
 .productImage {
   height: 300px;
   width: 300px;
@@ -83,25 +99,29 @@ body {
 }
 
 .homePagePhoto {
-  background-color: whitesmoke;
   display: flex;
-  width: 100vw;
-  height: 500px;
-  overflow-x: hidden;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 36px;
 }
 
 .mainPicHome {
-  height: 500px;
-  display: block;
-  width: 763.64px;
-}
-
-.secondPic {
-  height: 500px;
+  height: 400px;
+  width: 800px;
 }
 
 .homePageForm {
-  margin: 35px 75px 35px 271px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.headingMainPage {
+  text-align: center;
+  justify-content: center;
+  font-size: 16px;
 }
 
 .inputHomePage {
@@ -116,7 +136,7 @@ body {
 
 .productButton {
   width: 150px;
-  background-color: #8b233f;
+  background-color: blue;
   color: #dfe0e2;
   margin: 2px;
 }
@@ -146,13 +166,6 @@ body {
 .productSearchButton:hover {
   color: #dfe0e2;
   background-color: #1f101a;
-}
-
-.picHomePage {
-  width: 600px;
-  height: 500px;
-  display: block;
-  margin: 0 auto;
 }
 
 .footer {
@@ -188,21 +201,6 @@ body {
   display: flex;
   text-align: center;
 }
-
-/* .form-style-1 {
-  text-align: center;
-  margin: -7px auto;
-  max-width: 400px;
-  padding: 20px 12px 10px 20px;
-} */
-
-/* .form-style-1 li {
-  padding: 0;
-  display: block;
-  list-style: none;
-  margin: 10px 0 0 0;
-  color: #bf344d;
-} */
 
 /* SIGNUP PAGE - Laurie */
 
