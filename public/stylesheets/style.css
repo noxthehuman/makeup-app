@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  border: 1px solid pink;
   text-transform: uppercase;
 }
 
@@ -179,40 +180,36 @@ body {
 }
 
 /* Login Page */
-.login {
-  /* background-image: url("../images/homepage2.webp"); */
-  /* background-color: #f2b988; */
+.left-section {
   width: 50%;
 }
 
-.loginForm {
-  /* background-color: aliceblue; */
-  /* height: 500px; */
-  /* width: 500px; */
+.sign-in-section {
   display: flex;
   text-align: center;
 }
 
-.form-style-1 {
+/* .form-style-1 {
   text-align: center;
   margin: -7px auto;
   max-width: 400px;
   padding: 20px 12px 10px 20px;
-}
+} */
 
-.form-style-1 li {
+/* .form-style-1 li {
   padding: 0;
   display: block;
   list-style: none;
   margin: 10px 0 0 0;
   color: #bf344d;
-}
+} */
 
 /* SIGNUP PAGE - Laurie */
 
-.right-section {
+.sections {
   width: 50%;
   margin-top: 50px;
+  display: flex;
 }
 
 .vertical-line {
@@ -222,7 +219,7 @@ body {
   margin-top: 50px;
 }
 
-.signup {
+.sign-up-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -241,7 +238,6 @@ body {
   border-bottom: 1px solid black;
   margin: 15px 0;
   font-size: 1rem;
-  /* width: 20rem; */
   width: 100%;
 }
 
@@ -274,4 +270,125 @@ body {
   cursor: pointer;
   color: white;
   background-color: black;
+}
+
+.lightPlaceholder {
+  color: rgb(204, 204, 201);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* pop-up */
+
+.containerPopup {
+  background-color: #47bdff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  height: 80px;
+}
+
+.button {
+  text-decoration: none;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  display: inline-block;
+  border-radius: 1.5rem;
+  background-color: #fff;
+  color: #47bdff;
+  padding: 1rem 2rem;
+  font-weight: 900;
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hiden;
+  transition: 0.64s ease-in-out;
+}
+.popup-inner {
+  position: relative;
+  bottom: -100vw;
+  right: -100vh;
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  max-height: 600px;
+  width: 60%;
+  height: 80%;
+  background-color: #fff;
+  transform: rotate(32deg);
+  transition: 0.64s ease-in-out;
+}
+.popupphoto {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+}
+.popupphoto img {
+  width: auto;
+  height: 100%;
+}
+.popuptext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+  padding: 4rem;
+}
+.popuptext h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #0a0a0a;
+}
+.popuptext p {
+  font-size: 0.875rem;
+  color: #000000;
+  line-height: 1.5;
+}
+
+.popup:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup:target .popup-inner {
+  bottom: 0;
+  right: 0;
+  transform: rotate(0);
+}
+.closepopup {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  border-radius: 100%;
+  background-color: #47bdff;
+  z-index: 4;
+  color: #fff;
+  line-height: 3rem;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
 }

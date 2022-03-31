@@ -8,14 +8,14 @@ router.get("/", (req, res, next) => {
 });
 
 /* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index')
-})
+router.get("/", (req, res, next) => {
+  res.render("index");
+});
 
 router.get("/product-detail", async (req, res, next) => {
   try {
-    const productToDetail = await Product.findOne(req.body);
-    res.render("../views/prod-detail.hbs", { productToDetail });
+    const productToDetail = await Product.find({ _id: req.params.id });
+    res.render("prod-detail", { productToDetail });
   } catch (error) {
     console.error(error);
   }
