@@ -1,26 +1,28 @@
 <div class="signupLogin">
   {{!-- sign in --}}
-<div class="sections"> 
-<form class="sign-in-section" action="#" method="post">
-  <ul class="sign-in-form">
-  <li><label class="username" for="username">Username</label>
-  <input  type="text" id="username" name="username" placeholder="username"/></li>
-  <li><label for="password">Password</label>
-  <input  type="password" id="password" name="password" placeholder="password" /></li>
-  <li><input class="loginSubmit btn-black-hover hover" type="submit" value="Submit" /></li>
-  </ul>
-</form>
-</div>
+  <div class="sections"> 
+  <form class="sign-in-section" action="#" method="post">
+    <h2 class="signup signup-title">SIGN IN</h2>
+    <ul class="sign-in-form">
+      <li><label class="username" for="username">Username</label>
+      <input  type="text" id="username" name="username" placeholder="username"/></li>
+      <li><label for="password">Password</label>
+      <input  type="password" id="password" name="password" placeholder="password" /></li>
+      <li><input class="loginSubmit btn-black-hover hover" type="submit" value="Submit" /></li>
+    </ul>
+  </form>
+  </div>
+
 {{#if errorMessage}}
   <p class="error">{{errorMessage}}</p>
 {{/if}}
+
 <div class="vertical-line"></div>
   {{!-- sign up --}}
 <div class="sections">
 <div class="sign-up-section">
   <h2 class="signup signup-title">Create an account</h2>
-  <form action="/auth/signup" method="post" enctype="multipart/form-data">
-    <div class="signup">
+  <form id="create-account" class="signup" action="/auth/signup" method="post" enctype="multipart/form-data">
       <label class="username" for="username"></label>
       <input type="text" class="formBoxes" id="username" name="username" placeholder="Username" />
       <label for="password"></label>
@@ -47,3 +49,5 @@
   {{/if}}
 </div>
 </div>
+</div>
+
