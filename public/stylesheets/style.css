@@ -4,12 +4,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* border: 1px solid pink; */
   text-transform: uppercase;
 }
 
 body {
-  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
   font-family: "Oswald", sans-serif;
   margin-top: 50px;
 }
@@ -19,10 +17,11 @@ body {
 .nav-horizontal {
   background-color: #1f101a;
   overflow: hidden;
-  /* height: 3em; */
+  height: 3em;
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 2;
 }
 
 .mask {
@@ -42,9 +41,6 @@ body {
 
 .listNavBar li {
   height: 100%;
-}
-
-li {
   display: table-cell;
 }
 
@@ -53,19 +49,18 @@ li {
   padding: 0 1em;
   text-decoration: none;
   color: #dfe0e2;
-  height: 2em;
-  /* line-height: 3; */
+  height: 3em;
+  line-height: 3;
 }
 .listNavBar a:hover {
-  color: #f9f9f9;
+  color: #1f101a;
   line-height: 3;
   height: 100%;
 }
 
-a:hover {
-  /* border-bottom: 2px solid black; */
+.listNavBar a:hover {
   background-color: #f9f9f9;
-  color: #8b233f;
+  color: #1f101a;
   font-size: bold;
 }
 
@@ -83,13 +78,10 @@ a:hover {
 .productImage {
   height: 300px;
   width: 300px;
-  border: 2px solid grey;
+  border: 1px solid #dfe0e2;
 }
 
 .homePagePhoto {
-  /* background-image: url("../images/homepage7.jpg");
-  background-size: contain;
-  background-repeat: no-repeat; */
   background-color: whitesmoke;
   width: 100vw;
   height: 500px;
@@ -103,12 +95,18 @@ a:hover {
 .secondPic {
   height: 500px;
   position: absolute;
-  top: 75px;
-  left: 770px;
+  top: 97px;
+  left: 750px;
 }
 
 .homePageForm {
-  margin: 20px;
+  margin: 35px 75px 35px 271px;
+}
+
+.inputHomePage {
+  height: 40px;
+  text-align: center;
+  width: 190px;
 }
 
 .containerProduct h3 {
@@ -117,7 +115,18 @@ a:hover {
 
 .productButton {
   width: 150px;
-  background-color: #ae8f63;
+  background-color: #8b233f;
+  color: #dfe0e2;
+  margin: 2px;
+}
+
+.productButton a {
+  text-decoration: none;
+  color: #dfe0e2;
+}
+
+.productButton:hover {
+  background-color: #1f101a;
 }
 
 .productHomePage {
@@ -126,18 +135,26 @@ a:hover {
 }
 
 .productSearchButton {
-  width: 175px;
+  width: 190px;
+  height: 40px;
   background-color: #8b233f;
   color: #f9f9f9;
+  font-weight: bold;
 }
-/* .picHomePage {
+
+.productSearchButton:hover {
+  color: #dfe0e2;
+  background-color: #1f101a;
+}
+
+.picHomePage {
   width: 600px;
   height: 500px;
   display: block;
   margin: 0 auto;
-} */
+}
 
-/* .profilePicture {
+.profilePicture {
   height: 250px;
   width: 350px;
 }
@@ -147,7 +164,7 @@ a:hover {
   right: 470px;
   top: 113px;
   font-size: 40px;
-} */
+}
 
 /* Login Page */
 .login {
@@ -178,22 +195,6 @@ a:hover {
   margin: 10px 0 0 0;
   color: #bf344d;
 }
-
-/* .form-style-1 label {
-  margin: 0 0 3px 0;
-  padding: 0px;
-  display: block;
-  font-weight: bold;
-} */
-
-/* .loginSubmit {
-  background-color: #1b1617;
-  color: #ede8e3;
-  width: 173px;
-  height: 32px;
-  border: 10px;
-  border-radius: 10px;
-} */
 
 /* SIGNUP PAGE - Laurie */
 
