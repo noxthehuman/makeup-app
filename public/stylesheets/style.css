@@ -65,6 +65,13 @@ body {
   font-size: bold;
 }
 
+.logout-form {
+  background-color: black;
+  color: white;
+  font-family: "Oswald", sans-serif;
+  size: 2rem;
+}
+
 .containerProduct {
   display: grid;
   grid-gap: 10px;
@@ -84,20 +91,20 @@ body {
 
 .homePagePhoto {
   background-color: whitesmoke;
-  display: flex;
   width: 100vw;
   height: 500px;
-  overflow-x: hidden;
 }
 
 .mainPicHome {
   height: 500px;
   display: block;
-  width: 763.64px;
 }
 
 .secondPic {
   height: 500px;
+  position: absolute;
+  top: 97px;
+  left: 750px;
 }
 
 .homePageForm {
@@ -153,18 +160,6 @@ body {
   height: 500px;
   display: block;
   margin: 0 auto;
-}
-
-.footer {
-  height: 50px;
-  width: 100%;
-  background-color: #1f101a;
-  color: #dfe0e2;
-  line-height: 3;
-}
-
-.footer p {
-  margin-left: 45px;
 }
 
 .profilePicture {
@@ -227,6 +222,7 @@ body {
   width: 100%;
   margin: auto;
 }
+
 .signup-title {
   width: 100%;
   margin-bottom: 30px;
@@ -242,7 +238,7 @@ body {
 }
 
 ::placeholder {
-  color: rgb(70, 56, 56);
+  color: rgb(90, 72, 72);
 }
 
 .change-font {
