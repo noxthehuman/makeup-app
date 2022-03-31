@@ -3,7 +3,7 @@ document.addEventListener(
     () => {
         document.querySelectorAll('.addToLook').forEach(setUpAddButton);
         document.querySelector('form#createLookform').addEventListener('submit', checkIfEmpty)
-        document.querySelector('form#delete').addEventListener('submit', deleteFav)
+        document.querySelector('form#delete').addEventListener('submit', deleteFav, deleteLook)
     },
     false
 )
@@ -54,6 +54,16 @@ async function deleteFav(event) {
     console.log(productId)
     
     await axios.delete('/profile/delete/' + productId)
+
+    delete(event.target)
+}
+
+async function deleteLook(event) {
+    event.preventDefault()
+    const lookId = event.target.querySelector('input[type= "hidden"]').value
+    console.log(lookId)
+    
+    await axios.delete('/profile/delete/' + lookId)
 
     delete(event.target)
 }
