@@ -27,6 +27,7 @@ async function checkIfEmpty(event) {
     event.preventDefault()
     const data = {}
     const inputs = event.target.querySelectorAll('input')
+    const p = event.target.querySelectorAll('p')
     inputs.forEach((input)=> {
         if(input.value !== "") {
             data[input.name] = input.value
@@ -34,7 +35,16 @@ async function checkIfEmpty(event) {
     })
     console.log(data)
     const lookToCreateData =  await axios.post("/looks/create", data)
+
+    inputs.forEach((input) =>{
+        input.value = ""
+    })
+    p.forEach((text) => {
+        text.textContent = ""
+    })
+
+    alert('Look Created successfully !')
     
-    console.log(lookToCreateData, 'this is the data of the look created')
+    //console.log(lookToCreateData, 'this is the data of the look created')
 }
 
