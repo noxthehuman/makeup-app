@@ -13,9 +13,9 @@
       id="productType"
       placeholder="e.g eyeliner"
     />
-    <input class="inputHomePage" type="search" name="brand" id="brand" placeholder="By brand" />
-    <input class="inputHomePage" type="search" name="price" id="price" placeholder="Price" />
-    <input  class="productSearchButton" type="submit" value="search" />
+    <input class="inputHomePage" type="search" name="brand" id="brand" placeholder="Brand" />
+    <input class="inputHomePage" type="search" name="price" id="price" placeholder="Max price" />
+    <input  class="productButton" type="submit" value="search" />
   </form>
 </div>
 
@@ -26,14 +26,14 @@
 <div class="productHomePage">
   <ul class="containerProduct">
     {{#each products}}
-      <li><img class="productImage" src="{{imageUrl}}" alt="{{name}}" />
-        {{name}}
-        by
-        <h3>{{brand}}</h3>
-        <h6>{{price}}€</h6>
-        <button class="productButton" value="{{_id}}" id="fav"> Fav </button>
-        <button class="productButton"><a href="/product-detail">See more</a>
-        </button></li>
+      <li class="positionProductsPage">
+        <img class="productImage" src="{{imageUrl}}" alt="{{name}}" />
+        {{name}} <h3>{{brand}}</h3>
+        <h5>{{price}}€</h5>
+        <button value="{{_id}}" id="fav">
+          <img src="images/heart.png" class="deleteButton"/>
+        </button>
+        </li>
     {{/each}}
   </ul>
 </div>

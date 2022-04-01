@@ -5,9 +5,6 @@
   margin: 0;
   box-sizing: border-box;
   text-transform: uppercase;
-}
-
-body {
   font-family: "Oswald", sans-serif;
   text-decoration: none;
 }
@@ -21,11 +18,10 @@ body {
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 99;
 }
 
 .mask {
-  /* height: 5em; */
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -46,14 +42,14 @@ body {
 
 .listNavBar a {
   display: block;
-  padding: 1em;
+  padding:0 1em;
   text-decoration: none;
   color: #dfe0e2;
-  height: 3em;
+  height: 1em;
   line-height: 3;
 }
+
 .listNavBar a:hover {
-  color: #1f101a;
   line-height: 3;
   height: 100%;
   background-color: #f9f9f9;
@@ -77,6 +73,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-items: space-around;
 }
 
 .homePageLogout {
@@ -90,8 +87,12 @@ body {
   font-size: 16px;
 }
 
+h2 {
+  margin-left: 20px;
+}
+
 .homePageLogout:hover {
-  background-color: #f9f9f9;
+  background-color: #f78787;
   color: #1f101a;
 }
 
@@ -99,6 +100,14 @@ body {
   height: 200px;
   width: 200px;
   border: 1px solid #dfe0e2;
+  border-radius: 15px;
+}
+
+.profile-userimg {
+  border-radius: 100px;
+  margin: 30px;
+  width: 120px;
+  height: 120px;
 }
 
 .homePagePhoto {
@@ -124,7 +133,8 @@ body {
 .headingMainPage {
   text-align: center;
   justify-content: center;
-  font-size: 16px;
+  align-items: center;
+  font-size: 1em;
 }
 
 .inputHomePage {
@@ -172,30 +182,38 @@ body {
   background-color: #5a3384;
 }
 
+.positionProductsPage {
+  position: relative;
+}
+
+.positionProductsPage button {
+  position: absolute;
+  top: 0;
+  right: 20;
+  z-index: 4;
+}
+
 .profilePicture {
   height: 150px;
   width: auto;
-}
-
-.profile {
-  position: absolute;
-  right: 470px;
-  top: 113px;
-  font-size: 40px;
 }
 
 .profileFlex {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-items: space-around;
   justify-content: space-around;
+  margin: 20px 0;
 }
 
 .looks-display {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  list-style-type: none;
 }
 
 /* Login Page */
@@ -222,12 +240,10 @@ section.main-container {
   padding-top: 40px;
 }
 .sections {
-  /* width: 50%; */
   flex: 1;
   margin-top: 40px;
   display: flex;
   justify-content: center;
-  /* height: 100vh; */
 }
 
 .signup {
@@ -263,7 +279,6 @@ form#create-account {
 
 .formBoxes {
   display: flex;
-  font-family: "Oswald", sans-serif;
   border: none;
   border-bottom: 1px solid black;
   margin: 10px 0;
@@ -308,15 +323,6 @@ form#create-account {
 
 /* pop-up */
 
-.containerPopup {
-  background-color: #47bdff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80vw;
-  height: 80px;
-}
-
 .button {
   text-decoration: none;
   font-size: 0.875rem;
@@ -324,7 +330,7 @@ form#create-account {
   display: inline-block;
   border-radius: 1.5rem;
   background-color: #fff;
-  color: #47bdff;
+  color: #8734df;
   padding: 1rem 2rem;
   font-weight: 900;
 }
@@ -351,9 +357,9 @@ form#create-account {
   right: -100vh;
   display: flex;
   align-items: center;
-  max-width: 800px;
+  max-width: 600px;
   max-height: 600px;
-  width: 60%;
+  width: 45%;
   height: 80%;
   background-color: #fff;
   transform: rotate(32deg);
@@ -364,7 +370,7 @@ form#create-account {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 60%;
+  width: 90%;
   height: 100%;
   padding: 4rem;
 }
@@ -417,4 +423,42 @@ footer {
   position: fixed;
   z-index: 99;
   bottom: 0;
+}
+
+.productButton {
+  display: inline-block;
+  padding: 0.2em;
+  border: 0.16em solid rgb(255, 255, 255);
+  border-radius: 1em;
+  box-sizing:border-box;
+  width: 100px;
+  text-decoration: none;
+  font-weight: 300;
+  color: #ffffff;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.deleteButton {
+  width: 20px;
+  margin: 5px ;
+  height: auto;
+}
+
+.productButton:hover {
+  background-color: rgb(82, 33, 115);
+} 
+
+#createLookform label {
+  color: #a15bec;
+}
+
+#createLookform {
+  margin: 0 35px;
+}
+
+.looks-pagetitle {
+padding: 20px;
+text-align: center;
 }

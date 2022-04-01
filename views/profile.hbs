@@ -1,31 +1,28 @@
 <div class="profileFlex">
-  <div>
-    <h1>My Account</h1>
+  <div class="profileFlex">
     <div>
       <img src="{{user.picture}}" alt=" {{user.name}} picture"
-      class="productImage" />
+      class="productImage profile-userimg" />
     </div>
 
     <ul class="looks-display">
       <li> Name: {{user.username}} </li>
-      <li> Email Id: {{user.email}}</li>
+      <li> Email: {{user.email}}</li>
       <li> Age: {{user.age}}</li>
       <li>Location: {{user.location}}</li>
     </ul>
   </div>
 
   <div class="looks-display">
-     <h2>Your looks</h2>
+     <h3>Your looks</h3>
   <ul>
     {{#each looks}}
-      <li>
+      <li class="profileFlex">
         <a href="#popup-{{_id}} "> {{name}} </a>
-      </li>
-    
-      <li>
+
         <input type="hidden" value="{{_id}}" />
         <form action="/profile/delete/look/{{_id}}" method="post" id="delete">
-          <input type="submit" value="Delete" />
+          <input type="submit" value="Delete" class="productButton"/>
         </form>
       </li>
 
@@ -34,22 +31,38 @@
           <div class="popuptext">
             <div>
               <h3>{{name}}</h3>
+              {{#if mascara}}
               <p> Mascara : {{mascara.name}}, {{mascara.brand}} </p>
               <a href="{{mascara.linkToProduct}}"> See more</a>
+              {{/if}}
+              {{#if eyeliner}}
               <p> Eyeliner : {{eyeliner.name}}, {{eyeliner.brand}} </p>
               <a href="{{eyeliner.linkToProduct}}"> See more</a>
+              {{/if}}
+              {{#if eyeshadow}}
               <p> Eyeshadow : {{eyeshadow.name}}, {{eyeshadow.brand}} </p>
               <a href="{{eyeshadow.linkToProduct}}"> See more</a>
+              {{/if}}
+              {{#if eyebrows}}
               <p> Eyebrows :  {{eyebrows.name}}, {{eyebrows.brand}} </p>
               <a href="{{eyebrows.linkToProduct}}"> See more</a>
+              {{/if}}
+              {{#if bronzer}}
               <p> Bronzer :  {{bronzer.name}}, {{bronzer.brand}} </p>
               <a href="{{bronzer.linkToProduct}}"> See more</a>
+              {{/if}}
+              {{#if blush}}
               <p> Blush :  {{blush.name}}, {{blush.brand}} </p>
               <a href="{{blush.linkToProduct}}"> See more</a>
+              {{/if}}
+              {{#if foundation}}
               <p> Foundation :  {{foundation.name}}, {{foundation.brand}} </p>
               <a href="{{foundation.linkToProduct}}"> See more</a>
+              {{/if}}
+              {{#if lipstick}}
               <p> Lipstick : {{lipstick.name}}, {{lipstick.brand}} </p>
               <a href="{{lipstick.linkToProduct}}"> See more</a>
+              {{/if}}
             </div>
           </div>
         <a class="closepopup" href="#">X</a>
@@ -67,7 +80,7 @@
 
 <ul class="containerProduct">
   {{#each userFavorite}}
-    <li>
+    <li class="positionProductsPage">
       <img
         src="{{product.imageUrl}}"
         alt=" {{product.name}}"
@@ -76,10 +89,10 @@
       <p> {{product.name}} by {{product.brand}} </p>
       <form
         action="/profile/delete/favorite/{{product._id}}"
-        method="post"
-        id="delete"
-      >
-        <input type="submit" value="Delete" />
+        method="post" id="delete">
+        <button> 
+          <img src="/images/trash.png" class="deleteButton"/>
+        </button>  
       </form>
     </li>
   {{/each}}

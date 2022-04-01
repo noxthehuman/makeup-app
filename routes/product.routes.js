@@ -38,17 +38,18 @@ router.post('/favorites', isLoggedIn, async (req, res, next) => {
     })
     if (foundFav !== null) {
       await Favorite.findOneAndDelete(foundFav)
+      res.json({success: true})
     }
     else {
       const newFav = await Favorite.create({
         user: req.session.user._id,
         product: product
       })
+      res.json(newFav)
     }
     
-    res.json(newFav)
   } catch (error) {
-    console.error(error)
+    next(error)
   }
 })
 

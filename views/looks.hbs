@@ -1,59 +1,59 @@
-<h1>Create your custom look</h1>
+<h1 class="looks-pagetitle">Create your custom look</h1>
 
 <form action="/profile" method="post" id="createLookform">
 
 <label for="name"> Name </label>
-<input type="text" name="name" id="name"/>
+<input type="text" name="name" id="name"/ required>
 
 <div id="eyeshadow">
     <label for="eyeshadow-display"> Eyeshadow </label>
-    <input type="hidden" name="eyeshadow" id="eyeshadow-display"/>
+    <input type="hidden" name="eyeshadow" id="eyeshadow-display" class="prod-item-divs"/>
     <p> </p>
 </div>
 
 <div id="eyeliner">
     <label for="eyeliner-display"> Eyeliner </label>
-    <input type="hidden" name="eyeliner" id="eyeliner-display"/>
+    <input type="hidden" name="eyeliner" id="eyeliner-display" class="prod-item-divs"/>
     <p> </p>
 </div>
 
 <div id="mascara">
     <label for="mascara-display"> Mascara </label>
-    <input type="hidden" name="mascara" id="mascara-display"/>
+    <input type="hidden" name="mascara" id="mascara-display" class="prod-item-divs"/>
     <p> </p>
 </div>
 
 <div id="eyebrow">
     <label for="eyebrow-display"> Eyebrow </label>
-    <input type="hidden" name="eyebrow" id="eyebrow-display"/>
+    <input type="hidden" name="eyebrow" id="eyebrow-display" class="prod-item-divs"/>
     <p> </p>
 </div>
 
 <div id="foundation">
     <label for="foundation-display"> Foundation </label>
-    <input type="hidden" name="foundation" id="foundation-display"/>
+    <input type="hidden" name="foundation" id="foundation-display" class="prod-item-divs"/>
     <p> </p>
 </div>
 
 <div id="bronzer">
     <label for="bronzer-display"> Bronzer </label>
-    <input type="hidden" name="bronzer" id="bronzer-display"/>
+    <input type="hidden" name="bronzer" id="bronzer-display" class="prod-item-divs"/>
     <p> </p>
 </div>
 
 <div id="blush">
     <label for="blush-display"> Blush </label>
-    <input type="hidden" name="blush" id="blush-display"/>
+    <input type="hidden" name="blush" id="blush-display" class="prod-item-divs"/>
     <p> </p>
 </div>
 
 <div id="lipstick">
     <label for="lipstick-display"> LipStick </label>
-    <input type="hidden" name="lipstick" id="lipstick-display"/>
+    <input type="hidden" name="lipstick" id="lipstick-display" class="prod-item-divs"/>
     <p> </p>
 </div>
 
-<input type="submit" value="Create Look" id="createLook"/>
+<input type="submit" value="Create Look" id="createLook" class="productButton"/>
 </form>
 
 
@@ -62,7 +62,7 @@
     <li> 
         <img src="{{product.imageUrl}}" alt=" {{product.name}} image" class="productImage" />  
         <p data-product-id="{{product._id}}">{{product.name}} by {{product.brand}} </p>
-       <button method="post" class="addToLook"> Add </button>
+       <button method="post" class="addToLook productButton"> Add </button>
        <input type="hidden" value="{{product.productType}}" /> 
     </li>
     {{/each}}
